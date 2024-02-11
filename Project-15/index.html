@@ -1,0 +1,43 @@
+<!-- Write a program in Javascript to accept a word/a String and display the new string after removing all the vowels present in it. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOWEL REMOVER</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: darksalmon;
+        }
+    </style>
+</head>
+<body>
+    <h1>VOWEL REMOVER</h1>
+    <input type="text" id="inputSentence" placeholder="Enter your sentence">
+    <button onclick="removeVowels()">Remove</button>
+    <strong><p id="result"></p></strong>
+
+    <script>
+        function removeVowels()
+        {
+            let str = document.getElementById("inputSentence").value;
+            let newStr = "";
+            let len = str.length;
+            for(let i = 0 ; i < len ; i++)
+            {
+                if(str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U' || str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')
+                {
+                    continue;
+                }
+                else
+                {
+                    newStr = newStr + str[i];
+                }
+            }
+            document.getElementById("result").innerText = "String without any vowels = " + newStr;
+        }
+    </script>
+</body>
+</html>
