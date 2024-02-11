@@ -1,0 +1,53 @@
+<!-- Write a program to input three numbers and check whether they are equal or not. If they are unequal numbers then display the greatest among them otherwise, display the message 'All the numbers are equal'. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREATEST NUMBER</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>GREATEST NUMBER</h1>
+    <h4>Enter three numbers</h4>
+    <input type="number" id="inputNumber1" placeholder="Enter number 1 : ">
+    <input type="number" id="inputNumber2" placeholder="Enter number 2 : ">
+    <input type="number" id="inputNumber3" placeholder="Enter number 3 : ">
+    <button onClick="greatest()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function greatest()
+        {
+            let n1 = parseInt(document.getElementById("inputNumber1").value);
+            let n2 = parseInt(document.getElementById("inputNumber2").value);
+            let n3 = parseInt(document.getElementById("inputNumber3").value);
+            if(n1 === n2 && n1 === n3)
+            {
+                document.getElementById("result").innerText = "All the numbers are equal";
+            }
+            else
+            {
+                if(n1 > n2 && n1 > n3)
+                {
+                    document.getElementById("result").innerText = n1 + " is the greatest number";
+                }
+                else if(n2 > n1 && n2 > n3)
+                {
+                    document.getElementById("result").innerText = n2 + " is the greatest number";
+                }
+                else
+                {
+                    document.getElementById("result").innerText = n3 + " is the greatest number";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
