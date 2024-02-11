@@ -1,0 +1,95 @@
+<!-- A Pre-Paid taxi charges from the passenger as per the tariff given below:
+
+Distance	Rate
+Up to 5 km	₹ 100
+For the next 10 km	₹ 10/km
+For the next 10 km	₹ 8/km
+More than 25 km	₹ 5/km
+
+Write a program to input the distance covered and calculate the amount paid by the passenger -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAXI RIDE CHARGES</title>
+    <style>
+        body{
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 50px;
+            background-color:darkgrey;
+        }
+        table , tr , th {
+            
+            text-align: center;
+            border: 1px solid black;
+            margin: 30px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AMOUNT TO BE PAID FOR THE TAXI RIDE</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>DISTANCE</th>
+                <th>RATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Up to 5 km</th>
+                <th>Rs.100</th>
+            </tr>
+            <tr>
+                <th>For the next 10 km</th>
+                <th>Rs.10 / km</th>
+            </tr>
+            <tr>
+                <th>For the next 10 km</th>
+                <th>Rs.8 / km</th>
+            </tr>
+            <tr>
+                <th>More than 25 km</th>
+                <th>Rs.5 / km</th>
+            </tr>
+        </tbody>
+    </table>
+    <input type="number" id="inputDistance" placeholder="Enter distance Covered">
+    <button onclick="amount()">Calculate amount</button>
+    <p id="result"></p>
+
+    <script>
+        function amount()
+        {
+            let D = parseFloat(document.getElementById("inputDistance").value);
+            let amt = 0;
+            if(D <= 5)
+            {
+                amt = 100;
+                document.getElementById("result").innerText = "Amount paid by the passenger = Rs." + amt;
+            }
+            else if(D > 5 && D <= 15)
+            {
+                amt = 100 + (D-5)*10;
+                document.getElementById("result").innerText = "Amount paid by the passenger = Rs." + amt;
+            }
+            else if(D > 15 && D <= 25)
+            {
+                amt = 100 + (10*10) + (D-15)*8;
+                document.getElementById("result").innerText = "Amount paid by the passenger = Rs." + amt;
+            }
+            else
+            {
+                amt = 100 + (10*10) + (10*8) + (D-25)*5;
+                document.getElementById("result").innerText = "Amount paid by the passenger = Rs." + amt;
+            }
+        }
+    </script>
+</body>
+</html>
