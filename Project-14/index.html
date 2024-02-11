@@ -1,0 +1,49 @@
+<!-- Write a program to input a sentence. Find and display the following:
+(i) Number of words present in the sentence
+(ii) Number of letters present in the sentence
+Assume that the sentence has neither include any digit nor a special character. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: darkkhaki;
+        }
+    </style>
+</head>
+<body>
+    <h1>NUMBER OF WORDS AND LETTERS IN A STRING</h1>
+    <label for="sentenceInput">Enter a sentence: </label>
+    <input type="text" id="inputSentence">
+    <button onclick="analyzeSentence()">Analyze</button>
+    <strong>
+        <p id="resultWordCount"></p>
+        <p id="resultLength"></p>
+    </strong>
+
+    <script>
+        function analyzeSentence()
+        {
+            let str = document.getElementById("inputSentence").value;
+            let len = str.length;
+            document.getElementById("resultLength").innerText = "Length of the sentence = " + len;
+            str = str + " ";
+            let len1 = str.length;
+            let wc = 0; //Word count
+            for(let i = 0 ; i < len1 ; i++)
+            {
+                if(str[i] === " ")
+                {
+                    wc = wc + 1;
+                }
+            }
+            document.getElementById("resultWordCount").innerText = "Number of words in the sentence = " + wc;
+        }
+    </script>
+</body>
+</html>
