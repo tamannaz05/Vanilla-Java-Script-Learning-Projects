@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisibility Checker</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: rgb(55, 43, 67);
+        }
+    </style>
+</head>
+<body>
+    <h1>Divisibility Checker</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkDivisibility()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkDivisibility() 
+        {
+            // Get the input value
+            var number = document.getElementById("numberInput").value;
+            // Check if the number is divisible by 5
+            if (number % 5 === 0) 
+            {
+                document.getElementById("result").innerText = number + " is divisible by 5.";
+            } 
+            else 
+            {
+                document.getElementById("result").innerText = number + " is not divisible by 5.";
+            }
+        }
+    </script>
+
+</body>
+</html>
