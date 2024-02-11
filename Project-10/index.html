@@ -1,0 +1,57 @@
+<!-- Write a program to input two unequal positive numbers and check whether they are perfect square numbers or not. If the user enters a negative number then the program displays the message 'Square root of a negative number can't be determined'. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFECT SQUARE</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <h1>PERFECT SQUARE OR NOT</h1>
+    <h4>Enter two unequal positive numbers</h4>
+    <input type="number" id="inputNumber1" placeholder="Enter number 1">
+    <input type="number" id="inputNumber2" placeholder="Enter number 2">
+    <button onclick="isPerfectSquare()">Check</button>
+    <p id="result1"></p>
+    <p id="result2"></p>
+
+    <script>
+        function isPerfectSquare()
+        {
+            let n1 = parseFloat(document.getElementById("inputNumber1").value);
+            let n2 = parseFloat(document.getElementById("inputNumber2").value);
+            if(n1 < 0 || n2 < 0)
+            {
+                document.getElementById("result1").innerText = "Square root of a negative number cannot be determined";
+            }
+            else
+            {
+                let sq1 = parseInt(Math.sqrt(n1));
+                let sq2 = parseInt(Math.sqrt(n2));
+                if((sq1*sq1 === n1) || (sq2*sq2 === n2))
+                {
+                    if(sq1*sq1 === n1)
+                    {
+                        document.getElementById("result1").innerText = n1 + " is a Perfect Square number";
+                    }
+                    if(sq2*sq2 === n2)
+                    {
+                        document.getElementById("result2").innerText = n2 + " is a Perfect Square number";
+                    }
+                }
+                else
+                {
+                    document.getElementById("result1").innerText = n1 + " and " + n2 + " both are not Perfect Square Numbers";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
