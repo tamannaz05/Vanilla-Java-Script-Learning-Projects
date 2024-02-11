@@ -1,0 +1,57 @@
+<!-- Write a program in Java to enter a String/Sentence and display the longest word and the length of the longest word present in the String. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LONGEST WORD</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <h1>LONGEST WORD IN A SENTENCE</h1> 
+    <input type="text" id="inputSentence" placeholder="Enter a Sentence">
+    <button onclick="checkLongestWord()">Generate</button>
+    <strong>
+        <p id="resultMaxWord"></p>
+        <p id="resultMaxWordLength"></p>
+    </strong>
+    <script>
+        function checkLongestWord()
+        {
+            let str = document.getElementById("inputSentence").value;
+            str = str + " ";
+            let len = str.length;
+            let word = "";
+            let maxWord = "";
+            let wordLength = 0;
+            let maxWordLength = 0;
+            for(let i = 0 ; i < len ; i++)
+            {
+                if(str[i] != " ")
+                {
+                    word =  word +  str[i];
+                    wordLength = wordLength + 1;
+                }
+                else
+                {
+                    if(maxWordLength < wordLength)
+                    {
+                        maxWord = word;
+                        maxWordLength = wordLength;
+                    }
+                    word = "";
+                    wordLength = 0;
+                }
+            }
+            document.getElementById("resultMaxWord").innerText = "Longest Word in the sentence = " + maxWord;
+            document.getElementById("resultMaxWordLength").innerText = "Length of the longest Word in the sentence = " + maxWordLength;
+        }
+    </script>
+</body>
+</html> 
