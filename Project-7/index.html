@@ -1,0 +1,53 @@
+<!-- Write a program to input three angles of a triangle and check whether a triangle is possible or not. If possible then check whether it is an acute-angled triangle, right-angled or an obtuse-angled triangle otherwise, display 'Triangle not possible'. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIANGLE</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRIANGLES</h1>
+    <h3>ENTER THREE ANGLES AND CHECK WHETHER IT FORMS A TRIANGLE OR NOT</h3>
+    <h4>If it forms a triangle, you can also check what kind of triangle it is</h4>
+    <input type="number" id="inputAngle1" placeholder="Enter angle 1">
+    <input type="number" id="inputAngle2" placeholder="Enter angle 2">
+    <input type="number" id="inputAngle3" placeholder="Enter angle 3">
+    <button onclick="isTriangle()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function isTriangle()
+        {
+            let a1 = parseInt(document.getElementById("inputAngle1").value);
+            let a2 = parseInt(document.getElementById("inputAngle2").value);
+            let a3 = parseInt(document.getElementById("inputAngle3").value);
+            if(a1+a2+a3 === 180)
+            {
+                if(a1 < 90 &&  a2 < 90 && a3 < 90)
+                {
+                    document.getElementById("result").innerText = "The above angles forms an acute triangle";
+                }
+                else if(a1 === 90 || a2 === 90 || a3 === 90)
+                {
+                    document.getElementById("result").innerText = "The above angles forms a right-angled triangle";
+                }
+                else
+                {
+                    document.getElementById("result").innerText = "The above angles forms an obtuse triangle";
+                }
+            }
+            else
+            {
+                document.getElementById("result").innerText = "The above angles do not form a triangle";
+            }
+        }
+    </script>
+</body>
+</html>
