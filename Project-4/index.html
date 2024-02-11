@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALINDROME CHECKER</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PALINDROME CHECKER</h1>
+    <label>Enter a number:</label>
+    <input type="number" title="please enter here" id="inputNumber">
+    <button onclick="isPalindrome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function isPalindrome()
+        {
+            let num = document.getElementById("inputNumber").value;
+            num = parseInt(num);
+            let m = num;
+            let rev = 0;
+            while(m != 0)
+            {
+                let ld = m % 10;
+                rev = rev * 10 + ld;
+                m = Math.floor(m / 10);
+                /* 
+                    ERROR I MADE WHEN I FIRST WROTE THIS CODE:
+                        WROTE m = m/10;
+                        and that was returning a float value 
+                        and hence all of the answers were becoming no!
+                */
+            }
+            if(num === rev)
+            {
+                document.getElementById("result").innerText = "Yes it is a palindrome number";
+            }
+            else
+            {
+                document.getElementById("result").innerText = "No it is not a palindrome number";
+            }
+        }
+    </script>
+</body>
+</html>
