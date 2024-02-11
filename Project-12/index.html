@@ -1,0 +1,91 @@
+<!-- Creating a faulty calculator which is wrong only 50% of the time -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAULTY CALCULATOR</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <h1>FAULTY CALCULATOR</h1>
+    <h4>Enter two numbers and the operation you want to do: </h4>
+    <input type="number" id="inputNumber1" placeholder="Enter number 1">
+    <input type="number" id="inputNumber2" placeholder="Enter number 2">
+    <input id="inputOperation" placeholder="Enter operation to be done">
+    <button onclick="calculateAns()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateAns()
+        {
+            let n1 = parseFloat(document.getElementById("inputNumber1").value);
+            let n2 = parseFloat(document.getElementById("inputNumber2").value);
+            let op = document.getElementById("inputOperation").value;
+            let randomNumber = Math.random();
+            if(randomNumber < 0.5)
+            {
+                //calculating wrong answer
+                if(op === "+")
+                {
+                    let ans = n1-n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else if(op === "-")
+                {
+                    let ans = n1+n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else if(op === "*")
+                {
+                    let ans = n1/n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else if(op === "/")
+                {
+                    let ans = n1*n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else
+                {
+                    document.getElementById("result").innerText = "Invalid Operation";
+                }
+            }
+            else
+            {
+                //calculting correct answer
+                if(op === "+")
+                {
+                    let ans = n1+n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else if(op === "-")
+                {
+                    let ans = n1-n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else if(op === "*")
+                {
+                    let ans = n1*n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else if(op === "/")
+                {
+                    let ans = n1/n2;
+                    document.getElementById("result").innerText = "Answer = " + ans;
+                }
+                else
+                {
+                    document.getElementById("result").innerText = "Invalid Operation";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
