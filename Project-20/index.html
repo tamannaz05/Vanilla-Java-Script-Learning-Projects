@@ -1,0 +1,49 @@
+<!-- Write a program to display all the words that start and end with the same alphabet -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORDS WITH SAME START AND END ALPHABET</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: orchid;
+        }
+    </style>
+</head>
+<body>
+    <h1>WORDS WITH SAME START AND END ALPHABET</h1>
+    <input type="text" id="inputSentence" placeholder="Enter a sentence">
+    <button onclick="checkWords()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkWords()
+        {
+            let str = document.getElementById("inputSentence").value;
+            str = str + " ";
+            let len = str.length;
+            let word = "";
+            let resultWords = "";
+            for(let i = 0 ; i < len ; i++)
+            {
+                if(str[i] != " ")
+                {
+                    word = word + str[i];
+                }
+                else
+                {
+                    if(word[0] === word[word.length - 1])
+                    {
+                        resultWords = resultWords + word + " ";
+                    }
+                    word = "";
+                }
+            }
+            document.getElementById("result").innerText = resultWords;
+        }
+    </script>
+</body>
+</html>
