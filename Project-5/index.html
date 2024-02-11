@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME CALCULATOR</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: darkorchid;
+        }
+    </style>
+</head>
+<body>
+    <h1>TIME CALCULATOR</h1>
+    <h4>A program to input the time in seconds and display the time after converting them into hours, minutes and seconds.</h4>
+    <label>Enter time in seconds:</label>
+    <input type="number" id="inputTime">
+    <button onclick="timeConverter()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function timeConverter()
+        {
+            let time = parseInt(document.getElementById("inputTime").value);
+            let hrs = 0;
+            let mins = 0;
+            let secs = 0;
+            hrs = parseInt(time / 3600);
+            time = time - (hrs * 3600);
+            mins = parseInt(time / 60);
+            time = time - (mins * 60);
+            secs = parseInt(time);
+            document.getElementById("result").innerText = hrs + " hours " + mins + " minutes " + secs + " seconds ";
+        }
+    </script>
+</body>
+</html>
