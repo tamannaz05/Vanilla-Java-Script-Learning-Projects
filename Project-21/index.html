@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Name Generator</title>
+</head>
+<body>
+    <p id="answer"></p>
+    <script>
+        let firstWord , secondWord , thirdWord;
+        //generating the first word
+        let rand1 = parseFloat(Math.random());
+        if(rand1 <= 0.33)
+        {
+            firstWord = "Crazy";
+        }
+        else if(rand1 > 0.33 && rand1 < 0.66)
+        {
+            firstWord = "Amazing";
+        }
+        else
+        {
+            firstWord = "Fire";
+        }
+        //generating the second word
+        let rand2 = parseFloat(Math.random());
+        if(rand2 <= 0.33)
+        {
+            secondWord = "Engine";
+        }
+        else if(rand2 > 0.33 && rand2 < 0.66)
+        {
+            secondWord = "Foods";
+        }
+        else
+        {
+            secondWord = "Garments";
+        }
+        //generating the third word
+        let rand3 = parseFloat(Math.random());
+        if(rand3 <= 0.33)
+        {
+            thirdWord = "Bros";
+        }
+        else if(rand3 > 0.33 && rand3 < 0.66)
+        {
+            thirdWord = "Limited";
+        }
+        else
+        {
+            thirdWord = "Hub";
+        }
+        document.getElementById("answer").innerText = firstWord + " " + secondWord + " " + thirdWord;
+    </script>
+</body>
+</html>
