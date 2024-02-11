@@ -1,0 +1,52 @@
+<!-- Write a program in Java to enter a sentence. Display the words which are only palindrome. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALINDROME WORDS IN A SENTENCE</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: darkslategray;
+        }
+    </style>
+</head>
+<body>
+    <h1>PALINDROME WORDS IN A SENTENCE</h1>
+    <input type="text" id="inputSentence" placeholder="Enter a sentence">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPalindrome()
+        {
+            let str = document.getElementById("inputSentence").value;
+            str = str + " ";
+            let len = str.length;
+            let word = "";
+            let revWord = "";
+            let palindromeWords = "";
+            for(let i = 0 ; i < len ; i++)
+            {
+                if(str[i] != " ")
+                {
+                    word = word + str[i];
+                    revWord = str[i] + revWord;
+                }
+                else
+                {
+                    if(word == revWord)
+                    {
+                        palindromeWords = palindromeWords + word + " , ";
+                    }
+                    word = "";
+                    revWord = "";
+                }
+            }
+            document.getElementById("result").innerText = palindromeWords;
+        }
+    </script>
+</body>
+</html>
