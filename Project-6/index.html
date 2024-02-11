@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINIMUM AND MAXIMUM</title>
+    <style>
+        body{
+            margin: 100px;
+            text-align: center;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1>MINIMUM AND MAXIMUM BETWEEN THREE NUMBERS</h1>
+    <h4>Enter three numbers: </h4>
+    <input type="number" id="inputNumber1" placeholder="Enter number 1">
+    <input type="number" id="inputNumber2" placeholder="Enter number 2">
+    <input type="number" id="inputNumber3" placeholder="Enter number 3">
+    <button onclick="checkMinMax()">Check</button>
+    <p id="minResult"></p>
+    <p id="maxResult"></p>
+
+    <script>
+        function checkMinMax()
+        {
+            let n1 = parseInt(document.getElementById("inputNumber1").value);
+            let n2 = parseInt(document.getElementById("inputNumber2").value);
+            let n3 = parseInt(document.getElementById("inputNumber3").value);
+            let max = parseInt(Math.max(n1 , Math.max(n2,n3)));
+            let min = parseInt(Math.min(n1 , Math.min(n2,n3)));
+            document.getElementById("minResult").innerText = min + " is the smallest number";
+            document.getElementById("maxResult").innerText = max + " is the largest number";
+        }
+    </script>
+</body>
+</html>
