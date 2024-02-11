@@ -1,0 +1,34 @@
+<!-- Write a program in Java to accept a name containing three words and display the surname first, followed by the first and middle names.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAME FORMATTER</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: rgb(208, 251, 164);
+        }
+    </style>
+</head>
+<body>
+    <h1>NAME FORMATTER</h1>
+    <h4>Enter a name containing three words</h4>
+    <input type="text" id="inputName" placeholder="Enter your full name">
+    <button onclick="formatName()">Format</button>
+    <p id="result"></p>
+
+    <script>
+        function formatName()
+        {
+            let name = document.getElementById("inputName").value;
+            let lastBlankspace = name.lastIndexOf(' ');
+            let lastName = name.substring(lastBlankspace);
+            let initialName = name.substring(0 , lastBlankspace);
+            document.getElementById("result").innerText = lastName + " " + initialName;
+        }
+    </script>
+</body>
+</html>
