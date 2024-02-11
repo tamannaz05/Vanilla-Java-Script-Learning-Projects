@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACTORIAL</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 100px;
+            background-color: rgb(114, 184, 161);
+        }
+    </style>
+</head>
+<body>
+    <h1>Factorial of a number</h1>
+    <input type="number" id="numInput" placeholder="Enter a number"/>
+    <button onclick="fact()">Calculate</button>
+    <p id="answer"></p>
+
+    <script>
+        function fact()
+        {
+            let num = parseInt(document.getElementById("numInput").value);
+            let f = 1;
+            for(let i = 1 ; i <= num ; i++)
+            {
+                f = f * i;
+            }
+            document.getElementById("answer").innerText = "The factorial of " + num + " = " + f;
+        }
+    </script>
+</body>
+</html>
